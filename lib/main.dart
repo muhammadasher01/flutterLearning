@@ -1,3 +1,4 @@
+import 'package:dummyflutterapps/homepage.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,18 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Container(
-          child: Center(
-              child: Text(
-                "This is demo app",
-                style: TextStyle(
-            color: Colors.black,
-                  backgroundColor: Colors.amber,
-                  fontSize: 20
-          ),)),
-        ),
-      ),
+      home: homePage()
     );
   }
 }
