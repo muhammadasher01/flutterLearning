@@ -69,7 +69,7 @@ class _loginpageState extends State<loginpage> {
                         duration: Duration(seconds: 1),
                         width: buttonCLicked ? 50 : 150,
                         height: 50,
-                        alignment: Ali gnment.center,
+                        alignment: Alignment.center,
                         child: buttonCLicked ? Icon(Icons.done, color: Colors.white) : Text(
                           "Login",
                           style: TextStyle(
