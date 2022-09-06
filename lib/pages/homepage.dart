@@ -1,3 +1,4 @@
+import 'package:dummyflutterapps/widgets/Drawer.dart';
 import 'package:flutter/material.dart';
 
 class homePage extends StatelessWidget {
@@ -16,7 +17,7 @@ class homePage extends StatelessWidget {
               color: Colors.black, backgroundColor: Colors.amber, fontSize: 30),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
