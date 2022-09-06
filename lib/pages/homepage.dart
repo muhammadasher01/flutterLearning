@@ -12,7 +12,7 @@ class homePage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          "This is demo app",
+          "",
           style: TextStyle(
               color: Colors.black, backgroundColor: Colors.amber, fontSize: 30),
         ),
