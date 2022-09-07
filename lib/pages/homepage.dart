@@ -1,4 +1,6 @@
+import 'package:dummyflutterapps/models/MainItemsModel.dart';
 import 'package:dummyflutterapps/widgets/Drawer.dart';
+import 'package:dummyflutterapps/widgets/Item_widget.dart';
 import 'package:flutter/material.dart';
 
 class homePage extends StatelessWidget {
@@ -10,13 +12,13 @@ class homePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Demo App"),
       ),
-      body: Center(
-        child: Text(
-          "",
-          style: TextStyle(
-              color: Colors.black, backgroundColor: Colors.amber, fontSize: 30),
-        ),
-      ),
+      body: ListView.builder(
+              itemCount: CatelogModel.items.length,
+              itemBuilder: (context, index) {
+                return ItemWidget(item: CatelogModel.items[index]);
+              }),
+
+
       drawer: MyDrawer(),
     );
   }
