@@ -1,8 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 
 import 'package:dummyflutterapps/models/MainItemsModel.dart';
 import 'package:dummyflutterapps/widgets/Drawer.dart';
-import 'package:dummyflutterapps/widgets/Item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -37,12 +38,27 @@ class _homePageState extends State<homePage> {
       appBar: AppBar(
         title: Text("Demo App"),
       ),
-      body: (CatelogModel.items != null && CatelogModel.items.isNotEmpty)
-          ? ListView.builder(
+      body: (CatelogModel.items.isNotEmpty)
+          ? GridView.builder(
+              padding: EdgeInsets.all(16),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 50),
+              itemBuilder: (context, itemC ount) {
+                final Item item = CatelogModel.items[itemCount];
+
+                return Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  child: GridTile(
+                    header: Text(item.name),
+                    child: Image.network(item.image),
+                    footer: Text(item.price.toString()),
+                  ),
+                );
+              },
               itemCount: CatelogModel.items.length,
-              itemBuilder: (context, index) {
-                return ItemWidget(item: CatelogModel.items[index]);
-              })
+            )
           : Center(
               child: CircularProgressIndicator(),
             ),
