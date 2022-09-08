@@ -42,8 +42,8 @@ class _homePageState extends State<homePage> {
           ? GridView.builder(
               padding: EdgeInsets.all(16),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 50),
-              itemBuilder: (context, itemC ount) {
+                  mainAxisSpacing: 16, crossAxisCount: 2, crossAxisSpacing: 50),
+              itemBuilder: (context, itemCount) {
                 final Item item = CatelogModel.items[itemCount];
 
                 return Card(
